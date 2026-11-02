@@ -1,0 +1,255 @@
+/* ==========================================
+   STILI GENERALI - DARK MODE E-COMMERCE
+   ========================================== */
+:root {
+    --bg-color: #121214;         /* Sfondo scuro profondo */
+    --card-bg: #1e1e24;        /* Sfondo card e navbar leggermente più chiaro */
+    --text-color: #e4e4e7;      /* Testo chiaro ad alto contrasto */
+    --accent-color: #d97706;    /* Ambra / Bronzo caldo per le evidenziazioni */
+    --accent-hover: #f59e0b;    /* Hover brillante per i pulsanti */
+    --gray-light: #27272a;    /* Bordi e divisori scuri */
+    --gray-text: #a1a1aa;     /* Testo secondario opaco */
+    --font-main: 'system-ui', -apple-system, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- NAVBAR --- */
+header {
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-hover);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 2px;
+}
+
+/* --- CONTENUTO PRINCIPALE --- */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+h1.section-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+p.section-subtitle {
+    color: var(--gray-text);
+    margin-bottom: 2rem;
+}
+
+/* --- SEZIONI INTERNE ED ETICHETTE --- */
+.group-title {
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--gray-light);
+    padding-bottom: 0.3rem;
+    margin: 2.5rem 0 1.2rem 0;
+}
+
+/* --- GRIGLIA DEL CATALOGO --- */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* --- CARD PRODOTTO --- */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    border: 1px solid var(--gray-light);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(217, 119, 6, 0.15);
+    border-color: var(--accent-color);
+}
+
+.card-img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    background-color: #0d0d0e;
+}
+
+.card-content {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    color: #ffffff;
+}
+
+.card-author {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    margin-bottom: 0.8rem;
+    font-style: italic;
+}
+
+.card-desc {
+    font-size: 0.9rem;
+    color: #d1d1d6;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--accent-hover);
+    font-size: 1.1rem;
+}
+
+.btn-detail {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-detail:hover {
+    background-color: var(--accent-hover);
+}
+
+/* --- HERO BANNER & CATEGORY CARDS (HOME) --- */
+.hero {
+    background: linear-gradient(135deg, #1e1e24, #2d1a04);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--gray-light);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-hover);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 1.5rem auto;
+    color: #e4e4e7;
+}
+
+.home-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.category-card {
+    background: var(--card-bg);
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.3s, border-color 0.3s;
+    border: 1px solid var(--gray-light);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.category-card h3 {
+    color: var(--accent-hover);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.category-card p {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    color: var(--gray-text);
+    margin-top: 3rem;
+    border-top: 1px solid var(--gray-light);
+}
